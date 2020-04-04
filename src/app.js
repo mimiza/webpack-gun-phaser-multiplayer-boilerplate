@@ -18,6 +18,7 @@ let game = new Phaser.Game({
         },
     },
     scene: [Load, Play],
+    render: { pixelArt: true, antialias: false, autoResize: false },
 })
 
 window.game = game

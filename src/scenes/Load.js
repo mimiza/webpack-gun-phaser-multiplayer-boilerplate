@@ -1,6 +1,6 @@
 import Phaser from "phaser"
 
-import ob from "./../assets/transparency.png"
+// import ob from "./../assets/transparency.png"
 
 export default class Load extends Phaser.Scene {
     constructor() {
@@ -10,7 +10,7 @@ export default class Load extends Phaser.Scene {
     init() {}
 
     preload() {
-        this.load.image("test", ob)
+        // this.load.image("test", ob)
     }
 
     create() {
