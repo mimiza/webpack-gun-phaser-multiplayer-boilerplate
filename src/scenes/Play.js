@@ -1,8 +1,6 @@
 import Phaser from "phaser"
 
-// import Player from "../classes/Player"
-import tilesetimg from "../assets/maps/jungle/tileset.png"
-import mapdata from "../assets/maps/jungle/data.json"
+import Player from "../classes/Player"
 
 export default class Play extends Phaser.Scene {
     constructor() {
@@ -11,15 +9,13 @@ export default class Play extends Phaser.Scene {
 
     init() {}
 
-    preload() {
-        this.load.image("tilesetimg", tilesetimg)
-        this.load.tilemapTiledJSON("mapdata", mapdata)
-    }
+    preload() {}
 
     create() {
-        const map = this.add.tilemap("mapdata")
-        const tiles = map.addTilesetImage("tileset", "tilesetimg")
-        var Ground = map.createStaticLayer("Ground", tiles)
-        var Plants = map.createStaticLayer("Plants", tiles)
+        const map = this.add.tilemap("map")
+        const tileset = map.addTilesetImage("tileset", "tileset")
+        var Ground = map.createStaticLayer("Ground", tileset)
+        var Plants = map.createStaticLayer("Plants", tileset)
+        var player = new Player(this, 100, 250)
     }
 }
